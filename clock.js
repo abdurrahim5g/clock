@@ -36,8 +36,12 @@ const updateMinute = () => {
 // const update hour
 const updateHour = () => {
   let getHour = new Date().getHours();
-  getHour = getHour > 12 ? (getHour -= 12) : getHour;
-  getHour = getHour <= 9 ? "0" + getHour : getHour;
+  if (getHour > 12) {
+    getHour -= 12;
+  }
+  if (getHour <= 9) {
+    getHour = "0" + getHour;
+  }
   hours.innerHTML = getHour;
 };
 
