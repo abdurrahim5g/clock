@@ -26,11 +26,11 @@ const updateSecound = () => {
 // const update minute
 const updateMinute = () => {
   let getMinute = new Date().getMinutes();
-  getMinute = getMinute <= 9 ? "0" + getMinute : getMinute;
-  minutes.innerHTML = getMinute;
   if (getMinute == 0) {
     updateHour();
   }
+  getMinute = getMinute <= 9 ? "0" + getMinute : getMinute;
+  minutes.innerHTML = getMinute;
 };
 
 // const update hour
