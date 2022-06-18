@@ -8,7 +8,6 @@
  */
 
 // get all the referance.
-const date = new Date();
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const secounds = document.getElementById("secounds");
@@ -18,17 +17,11 @@ const updateSecound = () => {
   let getSecound = new Date().getSeconds();
   getSecound = getSecound <= 9 ? "0" + getSecound : getSecound;
   secounds.innerHTML = getSecound;
-  if (getSecound == 0) {
-    updateMinute();
-  }
 };
 
 // const update minute
 const updateMinute = () => {
   let getMinute = new Date().getMinutes();
-  if (getMinute == 0) {
-    updateHour();
-  }
   getMinute = getMinute <= 9 ? "0" + getMinute : getMinute;
   minutes.innerHTML = getMinute;
 };
@@ -48,7 +41,11 @@ const updateHour = () => {
 // update hours & minute as first time
 updateMinute();
 updateHour();
+updateSecound();
 
+// update all method in every secound
 setInterval(() => {
+  updateMinute();
+  updateHour();
   updateSecound();
 }, 1000);
