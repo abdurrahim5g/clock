@@ -68,3 +68,27 @@ h6 {
   text-transform: capitalize;
   padding: 10px;
 }
+
+/***
+Responsive styles
+====================== */
+@media all and (max-width: 767px) {
+  .clock-body-element h1 {
+    font-size: 30px;
+  }
+
+  .silgle-clock-element strong {
+    font-size: 35px;
+    padding: 20px 20px;
+  }
+
+  .silgle-clock-element {
+    margin: 0 10px;
+    flex: 1 1;
+    border-radius: 7px;
+  }
+
+  .silgle-clock-element p {
+    font-size: 10px;
+  }
+}
